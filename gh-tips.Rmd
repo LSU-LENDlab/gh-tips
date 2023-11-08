@@ -1,0 +1,61 @@
+---
+title: "Beginner GitHub Tips in the LEND Lab"
+author: "Will Decker"
+date: "2023-11-08"
+output: html_document
+---
+
+# What this document is for
+
+In this document, you will be provided with a brief overview of GitHub, how to interact with it, and how the LEND Lab uses it. For a different view or for some supplementary information, please refer to the [REAMDE](https://github.com/LSU-LENDlab/.github/blob/main/profile/README.md) on the LEND Lab GitHub profile. There, you will find some information that will also be relayed in the document as well as some other things that may not be in this document.
+
+# What is GitHub?
+
+GitHub is the cloud version of git. Git is a version control system. The great thing about GitHub is that it facilitates collaboration. It's a great way to share code and work together or coding projects. Sharing code is a big component to creating ethical and reproducible science.
+
+# How to interact with GitHub
+
+GitHub can be interfaced with a few different ways. Those with expert programming skills may stick to the terminal/shell using basic Unix commands. Most integrated developer environments (IDEs), like R Studio, MATLAB and Visual Studio Code, offer graphical based methods to ineract with GitHub.
+
+## What sorts of things do you do with GitHub?
+
+There are many "actions" that can be taken within GitHub. The most common are what's called a commit. This is essentially adding a new file version to git. To put it on GitHub, you must "push" your commit to your remote repository. A repository is just like a file folder. To bring updated code from your remote repository into your local directory, you must "pull" the updates. To do this in the terminal, lets look at a simple example.
+
+### From the terminal
+
+```
+mkdir gh-testing # makes folder named "gh-testing"
+touch my_file.txt # creates a file named "my_file.txt"
+
+git add my_file.txt # adds file to be commited
+git commit -m "my first commit" # commits file with the message (-m) "my first commit"
+git push origin main # pushes local changes to remote repository
+
+```
+
+The above code assumes a few things, like... 1. That you have git installed on your computer. 2. You have locally cloned a repository.
+
+Please refer to the LEND Lab [REAMDE](https://github.com/LSU-LENDlab/.github/blob/main/profile/README.md) for some more details on this.
+
+### With IDEs
+
+The GUI based interfacing with GitHub is relatively self explanatory once you understand the concepts of "add", "pull", "push", and "commit".
+
+# What is the purpose of this for the LEND Lab?
+
+As previously stated, using GitHub helps with code collaborations and open-science efforts.
+
+## How to use GitHub in the LEND Lab
+
+If you modify any code within a GitHub repository, please stage the commits and push them to the remote repo (short for repository) under which the code is housed. So, let's say you are working on an analysis in R, called `~/analysis/eeg_analysis.R`. You want to make changes to the code. If you change the code, please stage the changes by using the build in git/GitHub interface in R or by executing the following code in the terminal.
+
+```
+cd ~/analysis # modify this to correctly enter the directory you are working in
+git add eeg_analysis.R
+git commit -m "added code to gaussian-smooth data"
+git push origin main
+```
+
+### Some things to note
+
+The steps you have just taken are not the most optimal when it comes to modifying collaborative code. There are things like pull requests but that will be saved for a later time.
